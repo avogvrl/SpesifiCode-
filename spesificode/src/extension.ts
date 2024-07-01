@@ -1,5 +1,5 @@
 import * as vscode from 'vscode'
-import { getAIPoweredResponse } from './aiIntegration'
+import { getAIPoweredBotResponse } from './aiIntegration'
 
 
 //Typing effect
@@ -39,7 +39,7 @@ async function handleUserInput(){
 	})
 
 	//Fetch bot response
-	const botResponse = await getAIPoweredResponse(prompt)
+	const botResponse = await getAIPoweredBotResponse(prompt)
 
 	//Remove loading message
 	const loadingMessageLength = 'Fetching Response ...'.length

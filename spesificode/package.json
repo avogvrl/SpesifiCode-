@@ -6,16 +6,14 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/avogvrl/SpesifiCode-.git"
-  }
+  },
   "engines": {
     "vscode": "^1.90.0"
   },
   "categories": [
     "Other"
   ],
-  "activationEvents": [
-    "onCommand:extension.getAIPoweredBotResponse"
-  ],
+  "activationEvents": [],
   "main": "./out/extension.js",
   "contributes": {
     "commands": [
