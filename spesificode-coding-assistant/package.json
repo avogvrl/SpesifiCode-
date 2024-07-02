@@ -1,12 +1,8 @@
 {
-  "name": "spesificode",
-  "displayName": "SpesifiCode",
-  "description": "Revolutionize Your Programming Experiences! With our AI coding companion",
+  "name": "spesificode-coding-assistant",
+  "displayName": "SpesifiCode Coding Assistant",
+  "description": "Revolutionise your programming experience with SpesifiCode coding assistant!",
   "version": "0.0.1",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/avogvrl/SpesifiCode-.git"
-  },
   "engines": {
     "vscode": "^1.90.0"
   },
@@ -14,12 +10,12 @@
     "Other"
   ],
   "activationEvents": [],
-  "main": "./out/extension.js",
+  "main": "./dist/extension.js",
   "contributes": {
     "commands": [
       {
-        "command": "extension.getAIPoweredBotResponse",
-        "title": "Get SpesifiCode AI Response"
+        "command": "spesificode-coding-assistant.helloWorld",
+        "title": "Hello World"
       }
     ]
   },

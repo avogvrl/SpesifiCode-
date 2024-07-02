@@ -1,22 +1,25 @@
+// The module 'vscode' contains the VS Code extensibility API
+// Import the module and reference it with the alias vscode in your code below
 import * as vscode from 'vscode'
-import { getAIPoweredBotResponse } from './aiIntegration'
+import { getSpecifiCodeAIResponse } from './aiIntregation'
+import { resolve } from 'path';
 
 
 //Typing effect
-async function typeTextInEditor(editor: vscode.TextEditor, text: string){
+async function typeTextInEditor(editor:vscode.TextEditor, text: string){
 	for(let i=0; i<text.length; i++){
-		//adjust the delay of text
+		//Adjust the delay of text
 		await new Promise(resolve =>setTimeout(resolve, 50))
 		editor.edit(editBuilder =>{
 			editBuilder.insert(editor.selection.active, text[i])
 		})
 	}
+	
 }
 
-
-
 //Handle user input
-async function handleUserInput(){
+
+async function handleUserInput() {
 	const prompt = await vscode.window.showInputBox({
 		prompt: "Please enter your prompt"
 	})
@@ -39,7 +42,7 @@ async function handleUserInput(){
 	})
 
 	//Fetch bot response
-	const botResponse = await getAIPoweredBotResponse(prompt)
+	const botResponse = await getSpecifiCodeAIResponse(prompt)
 
 	//Remove loading message
 	const loadingMessageLength = 'Fetching Response ...'.length
@@ -53,18 +56,18 @@ async function handleUserInput(){
 		)
 	})
 
-
-	//Simulate typing affect for the bot response
+	//Simulate typing effect for the bot response
 	await typeTextInEditor(editor, botResponse)
 
-	//Display completion
-	vscode.window.showInformationMessage('Response is received and typed')
-
+	//display completion 
+	vscode.window.showInformationMessage('The response is received and typed. Thankyou!')
+	
 }
 
-export function active(context: vscode.ExtensionContext){
-	let disposable = vscode.commands.registerCommand('extension.getAIPoweredBotResponse', async()=>{
+export function activate(context: vscode.ExtensionContext){
+	let disposable = vscode.commands.registerCommand('extension.getSpecifiCodeAIResponse', async ()=>{
 		await handleUserInput()
 	})
 	context.subscriptions.push(disposable)
 }
+
