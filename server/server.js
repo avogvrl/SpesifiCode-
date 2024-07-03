@@ -7,7 +7,7 @@ dotenv.config()
 
 //Initiating OpenAI
 const openai = new OpenAI({
-    apiKey: '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'
+    apiKey: process.env.OPENAI_API_KEY
 })
 
 
