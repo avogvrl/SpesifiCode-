@@ -1,5 +1,7 @@
 {
   "name": "spesificode-coding-assistant",
+  "publisher": "SpesifiCode",
+  "icon": "SpesisifiCodeLogo1.png",
   "displayName": "SpesifiCode Coding Assistant",
   "description": "Revolutionise your programming experience with SpesifiCode coding assistant!",
   "version": "0.0.1",
