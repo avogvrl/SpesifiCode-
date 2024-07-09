@@ -31,7 +31,7 @@ app.post('/', async(req, res)=>{
         const prompt = req.body.prompt
         const response = await openai.completions.create({
             model: "gpt-3.5-turbo-instruct",
-            prompt: `${prompt}`,
+            prompt: "how to add 2 numbers in javascript",
             temperature: 0,
             max_tokens: 3000,
             top_p: 1,
