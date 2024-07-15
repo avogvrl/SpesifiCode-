@@ -30,7 +30,6 @@ app.post('/', async(req, res)=>{
     try{
         const prompt = req.body.prompt
         const response = await openai.completions.create({
-            instructions: "you are a programming tutor, you are designed to provide responses specifically related to programming or coding topics. you will reject prompts that do not relate to programming. These include topics such as general knowledge questions, personal advice, non-programming-related queries, and so on.",
             model: "gpt-3.5-turbo-instruct",
             prompt: `${prompt}`,
             temperature: 0,
